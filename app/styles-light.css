@@ -1,0 +1,90 @@
+:root {
+    --button-color: #FFF;
+    --button-border-radius: 5px;
+    --accent-color: #00adef;
+    --light-accent-color: #22cfff;
+    --gray-accent-color: #CCC;
+    --light-gray-accent-color: #EEE;
+    --error-accent-color: #FF0000;
+  }
+  
+  html, body {
+    box-sizing: border-box;
+    font: menu;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    color: var(--accent-color);
+  }
+  
+  a:hover {
+    color: var(--light-accent-color);
+  }
+  
+  h1, .links, .controls {
+    margin: 10px;
+  }
+  
+  .new-link-form {
+    display: flex;
+    margin-bottom: 2em;
+  }
+  
+  .new-link-form--url {
+    background-color: var(--light-gray-accent-color);
+    border: 1px solid var(--gray-accent-color);
+    display: block;
+    font-size: 1.8em;
+    height: 100%;
+    outline: none;
+    width: 100vw;
+  }
+  
+  .new-link-form--url--label {
+    display: none;
+  }
+  
+  .new-link-form--submit {
+    display: block;
+  }
+  
+  .new-link-form--submit:enabled {
+    background-color: var(--accent-color);
+    color: var(--button-color);
+  }
+  
+  .new-link-form--submit:disabled {
+    background-color: var(--button-color);
+    border: 1px solid var(--accent-color);
+    pointer-events: none;
+  }
+  
+  button, input[type="submit"] {
+    background-color: var(--button-color);
+    border: 1px solid var(--accent-color);
+  }
+  
+  button:hover, input[type="submit"]:hover {
+    background-color: var(--light-accent-color);
+    color: var(--button-color);
+  }
+  
+  .controls {
+    margin-top: 1em;
+  }
+  
+  .link {
+    border: 1px solid var(--gray-accent-color);
+    padding: 1em;
+  }
+  
+  .link h3, .link p {
+    margin-top: 0;
+  }
+  
+  .message {
+    background-color: var(--error-accent-color);
+    color: white;
+  }
