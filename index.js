@@ -1,6 +1,21 @@
-const electron = require("electron");
+const {app, BrowserWindow} = require("electron");
 
-const app = electron.app;
+let mainWindow = null;
+
 app.on("ready", ()=> {
-    console.log("Hello from Electron!")
+    mainWindow = new BrowserWindow({
+        width:300,
+        height:600,
+        show: false
+    })
+
+    mainWindow.once("ready-to-show", ()=> {
+        mainWindow.show();
+    })
+
+    mainWindow.on("closed", ()=> {
+        mainWindow= null;
+    })
+
+    mainWindow.loadURL("https://coil.com/");
 })

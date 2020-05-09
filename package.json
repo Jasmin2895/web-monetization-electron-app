@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^8.2.5"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5"
   }
 }
