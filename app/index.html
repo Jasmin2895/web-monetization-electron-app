@@ -2,17 +2,30 @@
 <html lang="en">
   <head>
     <title>Bookmarker</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="styles-light.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="styles-light.css" rel="stylesheet" />
   </head>
   <body>
     <div class="message"></div>
 
     <form class="new-link-form">
-      <label class="new-link-form--url--label" for="new-link-url">New Bookmark URL</label>
-      <input type="url" class="new-link-form--url" id="new-link-url" placeholder="URL" required>
-      <input type="submit" class="new-link-form--submit" value="Submit" disabled>
+      <label class="new-link-form--url--label" for="new-link-url"
+        >New Bookmark URL</label
+      >
+      <input
+        type="url"
+        class="new-link-form--url"
+        id="new-link-url"
+        placeholder="URL"
+        required
+      />
+      <input
+        type="submit"
+        class="new-link-form--submit"
+        value="Submit"
+        disabled
+      />
     </form>
 
     <section class="links"></section>
@@ -20,5 +33,8 @@
     <section class="controls">
       <button class="controls--clear-storage">Clear Storage</button>
     </section>
+    <script>
+      require("./renderer.js");
+    </script>
   </body>
 </html>
