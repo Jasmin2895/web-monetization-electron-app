@@ -1,10 +1,23 @@
-const newLinkUrl = document.querySelector("#new-link-url");
-const newLinkSubmit = document.querySelector(".new-link-form--submit");
+const os = require("os");
+const fs = require("fs");
 
-newLinkUrl.addEventListener("keyup", () => {
-  newLinkUrl.disabled = !newLinkUrl.validity.valid;
+const files = fs.readdirSync(os.homedir());
+
+console.log(files);
+
+files.forEach((name) => {
+  const file = document.createElement("li");
+  file.textContent = name;
+  document.body.appendChild(file);
 });
 
-newLinkUrl.addEventListener("submit", () => {
-  newLinkSubmit.disabled = !newLinkUrl.validity.valid;
-});
+// const newLinkUrl = document.querySelector("#new-link-url");
+// const newLinkSubmit = document.querySelector(".new-link-form--submit");
+
+// newLinkUrl.addEventListener("keyup", () => {
+//   newLinkUrl.disabled = !newLinkUrl.validity.valid;
+// });
+
+// newLinkUrl.addEventListener("submit", () => {
+//   newLinkSubmit.disabled = !newLinkUrl.validity.valid;
+// });

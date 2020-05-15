@@ -4,9 +4,12 @@ let mainWindow = null;
 
 app.on("ready", () => {
   mainWindow = new BrowserWindow({
-    width: 400,
-    height: 600,
+    // width: 400,
+    // height: 600,
     show: false,
+    webPreferences: {
+      nodeIntegration: true,
+    },
   });
   mainWindow.once("ready-to-show", () => {
     mainWindow.show();
