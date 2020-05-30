@@ -2,15 +2,15 @@ const { app, BrowserWindow } = require("electron");
 
 let mainWindow = null;
 
-app.on("ready", () => {
+function createAppWindow() {
   mainWindow = new BrowserWindow({
-    // width: 400,
-    // height: 600,
-    show: false,
+    width: 800,
+    height: 600,
     webPreferences: {
       nodeIntegration: true,
     },
   });
+
   mainWindow.once("ready-to-show", () => {
     mainWindow.show();
   });
@@ -19,5 +19,22 @@ app.on("ready", () => {
     mainWindow = null;
   });
 
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  mainWindow.loadFile("index.html");
+
+  mainWindow.webContents.openDevTools();
+  mainWindow.addTabbedWindow();
+}
+
+app.whenReady().then(createAppWindow);
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});
+
+app.on("activate", () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createAppWindow();
+  }
 });
