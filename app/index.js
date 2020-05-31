@@ -40,10 +40,6 @@ async function createWindow() {
 
 app.whenReady().then(async () => {
   createWindow();
-  const options = {
-    enableMonetization: true,
-    disableMonetization: false,
-  };
 
   BrowserWindow.getDevToolsExtensions(); // this line was added, note no delay
   app.on("activate", function () {
