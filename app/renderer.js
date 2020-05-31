@@ -31,5 +31,5 @@ document.monetization &&
   );
 
 function startEventHandler(event) {
-  console.log("event", event);
+  //   console.log("event", event);
 }

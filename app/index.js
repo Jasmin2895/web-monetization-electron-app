@@ -10,7 +10,6 @@ async function createWindow() {
       nodeIntegration: true,
       preload: path.join(__dirname, "preload.js"),
       slashes: true,
-      // sandbox: true,
     },
   });
 
@@ -31,7 +30,7 @@ async function createWindow() {
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   mainWindow.webContents.openDevTools();
-  mainWindow.setTitle("Coil Integration testing!");
+  mainWindow.setTitle("Web Monetization Integration");
 
   mainWindow.on("closed", (e) => {
     mainWindow = null;
@@ -51,7 +50,7 @@ app.whenReady().then(async () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
   app.on("web-contents-created", (event, contents) => {
-    console.log(contents.history);
+    // console.log(contents.history);
   });
 });
 
