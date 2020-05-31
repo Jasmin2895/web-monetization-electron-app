@@ -1,13 +1,6 @@
-// Modules to control application life and create native browser window
 const { app, BrowserWindow, session, ipcMain } = require("electron");
 const os = require("os");
-const { default: installExtension } = require("electron-devtools-installer");
 const path = require("path");
-// const {
-//   enableWebMonetization,
-//   disableWebMonetization,
-// } = require("./electron-web-monetization");
-const COIL_EXTENSION_ID = "locbifcbeldmnphbgkdigjmkbfkhbnca";
 async function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -40,8 +33,9 @@ async function createWindow() {
   mainWindow.webContents.openDevTools();
   mainWindow.setTitle("Coil Integration testing!");
 
-  mainWindow.on("closed", () => {
+  mainWindow.on("closed", (e) => {
     mainWindow = null;
+    mainWindow.webContents.send("disable-web-monetization");
   });
 }
 
@@ -51,19 +45,6 @@ app.whenReady().then(async () => {
     enableMonetization: true,
     disableMonetization: false,
   };
-
-  // check if coil is installed dispatch event from main to renderer process to initialize web monetization.
-  // ipcMain.sendSync("on-coil-extension-installed", true);
-
-  ipcMain.on("asynchronous-message", (event, arg) => {
-    console.log(arg); // prints "ping"
-    event.reply("asynchronous-reply", "pong");
-  });
-
-  ipcMain.on("synchronous-message", (event, arg) => {
-    console.log(arg); // prints "ping"
-    event.returnValue = "pong";
-  });
 
   BrowserWindow.getDevToolsExtensions(); // this line was added, note no delay
   app.on("activate", function () {
