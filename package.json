@@ -13,6 +13,7 @@
     "devtron": "^1.4.0",
     "electron-chrome-extension": "^5.0.0",
     "eslint": "^7.0.0",
+    "requirejs": "^2.3.6",
     "spectron": "^10.0.1",
     "web-monetized-video": "^0.1.1"
   },

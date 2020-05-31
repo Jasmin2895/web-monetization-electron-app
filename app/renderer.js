@@ -1,11 +1,15 @@
 const { ipcRenderer } = require("electron");
-console.log("renderer process", window.document);
+ipcRenderer.send("on-coil-extension-installed");
 
-ipcRenderer.on("on-coil-extension-installed", (event, arg) => {
-  console.log(arg); // prints "pong"
+ipcRenderer.on("extension loaded", (event, arg) => {
+  // Update the second interface or whatever you need to do
+  // for example show an alert ...
+  // arg contains the data sent from the first view
+  console.log("id", arg);
+
+  if (arg) {
+  }
 });
-
-function enableWebMonetization() {}
 
 // const { remote } = require("electron");
 // const newLinkUrl = document.querySelector("#new-link-url");
