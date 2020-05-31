@@ -5,21 +5,27 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
+      content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'"
     />
     <meta
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
-    <title>Hello World!</title>
   </head>
   <body>
     <h1>Hello World!</h1>
     We are using Node.js <span id="node-version"></span>, Chromium
     <span id="chrome-version"></span>, and Electron
     <span id="electron-version"></span>.
+    <web-monetized-video
+      width="400"
+      height="400"
+      url="https://www.html5rocks.com/en/tutorials/video/basics/Chrome_ImF.webm"
+      monetization-link="$wallet.example.com/alice"
+    ></web-monetized-video>
 
     <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    <script type="module" src="./renderer.js"></script>
+    <script type="module" src="https://unpkg.com/web-monetized-video"></script>
   </body>
 </html>
