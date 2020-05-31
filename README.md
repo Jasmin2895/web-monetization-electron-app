@@ -1,2 +1,2 @@
 # electron-app
-Trying something new with electron
+Experimenting with web monetization and electron app
