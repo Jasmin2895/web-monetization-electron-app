@@ -1,9 +1,10 @@
 const { app, BrowserWindow, session, ipcMain } = require("electron");
 const os = require("os");
 const path = require("path");
+let mainWindow = null;
 async function createWindow() {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
@@ -33,8 +34,8 @@ async function createWindow() {
   mainWindow.setTitle("Web Monetization Integration");
 
   mainWindow.on("closed", (e) => {
+    // mainWindow.webContents.send("disable-web-monetization");
     mainWindow = null;
-    mainWindow.webContents.send("disable-web-monetization");
   });
 }
 
