@@ -9,7 +9,7 @@ git clone https://github.com/Jasmin2895/web-monetization-electron-app.git
 
 ```
 
-## Run the project
+## Run the project locally
 
 ```shell
 npm start
