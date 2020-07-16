@@ -1,5 +1,5 @@
 # web-monetization-electron-app 💵 
-Experimenting with web monetization and electron app
+Experimenting with web monetization in electron app
 
 This project demonstrate basic setup to enable web monetization in Electron App. 
 You install the project using:
